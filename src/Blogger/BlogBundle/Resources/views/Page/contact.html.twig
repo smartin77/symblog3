@@ -9,4 +9,18 @@
     </header>
 
     <p>Want to contact symblog?</p>
+
+    {{ form_start(form, { 'attr': {'class': 'blogger'} }) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.subject) }}
+    {{ form_row(form.body) }}
+
+    {{ form_row(form.submit, { 'label': 'Submit me' }) }}
+
+    {{ form_end(form) }}
+
+
 {% endblock %}
