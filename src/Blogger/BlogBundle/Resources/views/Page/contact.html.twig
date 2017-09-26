@@ -8,6 +8,10 @@
         <h1>Contact symblog</h1>
     </header>
 
+    {% for message in app.flashes('blogger-notice') %}
+        {{ message }}
+    {% endfor %}
+
     <p>Want to contact symblog?</p>
 
     {{ form_start(form, { 'attr': {'class': 'blogger'} }) }}
