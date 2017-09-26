@@ -1,0 +1,30 @@
+{# src/Blogger/BlogBundle/Resources/views/Page/contact.html.twig #}
+{% extends 'BloggerBlogBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact symblog</h1>
+    </header>
+
+    {% for message in app.flashes('blogger-notice') %}
+        {{ message }}
+    {% endfor %}
+
+    <p>Want to contact symblog?</p>
+
+    {{ form_start(form, { 'attr': {'class': 'blogger'} }) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.subject) }}
+    {{ form_row(form.body) }}
+
+    {{ form_row(form.submit, { 'label': 'Submit me' }) }}
+
+    {{ form_end(form) }}
+
+
+{% endblock %}
