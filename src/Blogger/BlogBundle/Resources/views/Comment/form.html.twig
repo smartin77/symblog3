@@ -1,0 +1,8 @@
+{# src/Blogger/BlogBundle/Resources/views/Comment/form.html.twig #}
+
+{{ form_start(form, {'action' : path('BloggerBlogBundle_comment_create', {'blog_id' : comment.blog.id}), 'attr' : {'class' : 'blogger'}, 'method' : 'POST' }) }}
+{{ form_widget(form) }}
+<div>
+    <input type="submit" value="Submit">
+</div>
+{{ form_end(form) }}

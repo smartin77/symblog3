@@ -2,10 +2,18 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('bundles/bloggerblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
+    {{ parent () }}
+
+    {% stylesheets
+        '@BloggerBlogBundle/Resources/public/css/blog.css'
+        '@BloggerBlogBundle/Resources/public/css/sidebar.css'
+         output='css/blogger.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
 {% endblock %}
 
 {% block sidebar %}
-    Sidebar content
+    {{ render(controller("BloggerBlogBundle:Page:sidebar")) }}
 {% endblock %}
