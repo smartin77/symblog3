@@ -9,7 +9,7 @@
     </header>
 
     {% for message in app.flashes('blogger-notice') %}
-        {{ message }}
+        <div class="blogger-notice">{{ message }}</div>
     {% endfor %}
 
     <p>Want to contact symblog?</p>

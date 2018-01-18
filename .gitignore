@@ -14,6 +14,7 @@
 /app/config/parameters.yml
 /app/config/parameters.ini
 /build/
+/phpunit-report/*
 /phpunit.xml
 /vendor/
 /web/bundles/
