@@ -23,8 +23,8 @@ class BlogControllerTest extends WebTestCase
             'blogger_blogbundle_comment[comment]'       => 'comment',
         ));
 
-        // Need to follow redirect
-        $client->followRedirect();
+        // Need to follow redirect and overwrite crawler
+        $crawler = $client->followRedirect();
 
         // Check comment is now displaying on page, as the last entry. This ensure comments
         // are posted in order of oldest to newest
